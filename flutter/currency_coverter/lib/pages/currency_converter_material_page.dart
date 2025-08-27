@@ -5,16 +5,34 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    return const Scaffold(
+    backgroundColor: Colors.blueGrey ,
      body:Center(
      child:  Column(
       mainAxisAlignment:MainAxisAlignment.center,
       children:[
-        Text("0",style: TextStyle(
+        Text("0hhsdsjsdjd",
+          style: TextStyle(
           fontSize:35,
           fontWeight:FontWeight.bold,
-          color: Color.fromARGB(255, 122, 16, 16)
+          color: Colors.white
         ),
         ),
+        TextField(
+        style:TextStyle (
+          color:Colors.black,
+          fontWeight:FontWeight.w500,
+          ),
+          decoration: InputDecoration(
+            hintText: 'Please enter the amount in usd',
+            hintStyle: TextStyle(
+              color: Colors.black,
+            ),
+            prefixIcon:Icon(Icons.monetization_on_outlined), 
+            prefixIconColor:Colors.black,
+            filled: true,
+            fillColor: Colors.white,
+          ),
+        )
       ],
      )
     )
