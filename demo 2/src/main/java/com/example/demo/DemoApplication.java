@@ -9,5 +9,4 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
         System.out.println("Spring Boot has started!");
     }
-
 }
