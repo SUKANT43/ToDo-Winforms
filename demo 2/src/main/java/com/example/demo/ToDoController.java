@@ -1,14 +1,12 @@
 package com.example.demo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping("/todo")
 public class ToDoController {
 
-    @GetMapping("/get")
+    @GetMapping("/")
     String getTodo(){
         return "todo";
     }
@@ -17,5 +15,16 @@ public class ToDoController {
     String getTodoById(@PathVariable int id){
         return "todo "+id;
     }
+
+    @GetMapping("")
+    String getTodoByParams(@RequestParam("todoid") long id){
+        return "Param "+id;
+    }
+
+    @PostMapping("/create")
+    String CreateUser(@RequestBody String body){
+        return body;
+    }
+
 
 }
