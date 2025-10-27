@@ -153,12 +153,11 @@ namespace ToDo_App.View
             dataTableLayoutPanel = new TableLayoutPanel();
             dataTableLayoutPanel.Dock = DockStyle.Fill;
             dataTableLayoutPanel.ColumnCount = 4;
-            dataTableLayoutPanel.Padding = new Padding(10);
             dataTableLayoutPanel.AutoSize = true;
             dataTableLayoutPanel.Controls.Add(new Label { Text = "Title", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 0, 0);
             dataTableLayoutPanel.Controls.Add(new Label { Text = "Description", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 1, 0);
             dataTableLayoutPanel.Controls.Add(new Label { Text = "Date", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 2, 0);
-            dataTableLayoutPanel.Controls.Add(new Label { Text = "Priority", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 2, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Priority", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 3, 0);
             dataPanel.Controls.Add(dataTableLayoutPanel);
 
             // Add to input panel and form
@@ -184,7 +183,7 @@ namespace ToDo_App.View
 
         private void Click_SubmitButton()
         {
-            if (string.IsNullOrWhiteSpace(titleTextBox.Text) || string.IsNullOrWhiteSpace(DescriptionRichTextBox.Text))
+            if (priorityComboBox.SelectedItem == null||string.IsNullOrWhiteSpace(titleTextBox.Text) || string.IsNullOrWhiteSpace(DescriptionRichTextBox.Text))
             {
                 MessageBox.Show("Please fill in all the fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
