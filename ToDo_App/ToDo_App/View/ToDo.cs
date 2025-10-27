@@ -194,6 +194,9 @@ namespace ToDo_App.View
                 dateTimePicker.Value,
                 priorityComboBox.SelectedItem.ToString()
                 ));
+            titleTextBox.Text = "";
+            DescriptionRichTextBox.Text = "";
+
             DiplayData();
         }
         private void AddSampleData()
