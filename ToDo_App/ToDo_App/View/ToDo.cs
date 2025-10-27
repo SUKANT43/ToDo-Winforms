@@ -12,7 +12,7 @@ namespace ToDo_App.View
 {
     public partial class ToDo : Form
     {
-        private Panel mainPanel,inputPanel,titlePanel,descriptionPanel,datePanel,priorityPanel,submitPanel, gridPanel;
+        private Panel mainPanel,inputPanel,titlePanel,descriptionPanel,datePanel,priorityPanel,submitPanel, dataPanel;
         private Label titleLabel,descriptionLabel,dateLabel,priorityLabel;
         private TextBox titleTextBox;
         private RichTextBox DescriptionRichTextBox;
@@ -20,17 +20,20 @@ namespace ToDo_App.View
         private ComboBox priorityComboBox;
         private Button submitButton;
         private List<Controller.ToDoController> list;
-        private DataGridView dataGridView;
+        private TableLayoutPanel dataTableLayoutPanel;
         public ToDo()
         {
             MinimumSize = new Size(500, 600);
             StartPosition = FormStartPosition.CenterScreen;
             list = new List<Controller.ToDoController>();
+
             submitButton = new Button();
 
             Load += (s, e) =>
             {
                 Elements();
+                AddSampleData();
+                DiplayData();
                 ResizeElements();
             };
             Resize += (s, e) =>
@@ -144,12 +147,19 @@ namespace ToDo_App.View
             submitPanel.Controls.Add(submitButton);
 
             //grid
-            gridPanel = new Panel();
-            gridPanel.Location = new Point((ClientSize.Width - gridPanel.Width) / 2, mainPanel.Bottom + 30);
-
-            dataGridView = new DataGridView();
-            dataGridView.Dock = DockStyle.Fill;
-            gridPanel.Controls.Add(dataGridView);
+            dataPanel = new Panel();
+            dataPanel.AutoSize = true;
+            dataPanel.Location = new Point((ClientSize.Width - dataPanel.Width) / 2, inputPanel.Bottom + 30);
+            dataTableLayoutPanel = new TableLayoutPanel();
+            dataTableLayoutPanel.Dock = DockStyle.Fill;
+            dataTableLayoutPanel.ColumnCount = 4;
+            dataTableLayoutPanel.Padding = new Padding(10);
+            dataTableLayoutPanel.AutoSize = true;
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Title", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 0, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Description", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 1, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Date", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 2, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Priority", Font = new Font("Segoe UI", 10, FontStyle.Bold) }, 2, 0);
+            dataPanel.Controls.Add(dataTableLayoutPanel);
 
             // Add to input panel and form
             inputPanel.Controls.Add(titlePanel);
@@ -160,7 +170,7 @@ namespace ToDo_App.View
             mainPanel.Location = new Point();
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(inputPanel);
-            mainPanel.Controls.Add(gridPanel);
+            mainPanel.Controls.Add(dataPanel);
             Controls.Add(mainPanel);
 
          }
@@ -168,6 +178,8 @@ namespace ToDo_App.View
         private void ResizeElements()
         {
             inputPanel.Location = new Point(((ClientSize.Width - inputPanel.Width) / 2), 50);
+            dataPanel.Location = new Point((ClientSize.Width - dataPanel.Width) / 2, inputPanel.Bottom + 30);
+
         }
 
         private void Click_SubmitButton()
@@ -183,6 +195,80 @@ namespace ToDo_App.View
                 dateTimePicker.Value,
                 priorityComboBox.SelectedItem.ToString()
                 ));
+            DiplayData();
         }
+        private void AddSampleData()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                list.Add(new Controller.ToDoController(
+                    $"Task {i}",
+                    $"Description for Task {i}",
+                    DateTime.Now.AddDays(i),
+                    i % 3 == 0 ? "High" : i % 2 == 0 ? "Moderate" : "Low"
+                ));
+            }
+        }
+
+        private void DiplayData()
+        {
+            dataTableLayoutPanel.Controls.Clear();
+            dataTableLayoutPanel.RowStyles.Clear();
+            dataTableLayoutPanel.ColumnStyles.Clear();
+
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Title", Font = new Font("Segoe UI", 10, FontStyle.Bold), AutoSize = true }, 0, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Description", Font = new Font("Segoe UI", 10, FontStyle.Bold), AutoSize = true }, 1, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Date", Font = new Font("Segoe UI", 10, FontStyle.Bold), AutoSize = true }, 2, 0);
+            dataTableLayoutPanel.Controls.Add(new Label { Text = "Priority", Font = new Font("Segoe UI", 10, FontStyle.Bold), AutoSize = true }, 3, 0);
+
+            int row = 1;
+            foreach (var item in list)
+            {
+                var titleLabel = new Label
+                {
+                    Text = item.Title,
+                    AutoSize = true,
+                    Padding = new Padding(5)
+                };
+
+                var descLabel = new Label
+                {
+                    Text = item.Description,
+                    AutoSize = true,
+                    Padding = new Padding(5)
+                };
+
+                var dateLabel = new Label
+                {
+                    Text = item.Date.ToShortDateString(),
+                    AutoSize = true,
+                    Padding = new Padding(5)
+                };
+
+                var priorityLabel = new Label
+                {
+                    Text = item.Priority,
+                    AutoSize = true,
+                    Padding = new Padding(5),
+                    ForeColor = Color.White,
+                    TextAlign = ContentAlignment.MiddleCenter
+                };
+
+                if (item.Priority == "Low")
+                    priorityLabel.BackColor = Color.Green;
+                else if (item.Priority == "Moderate")
+                    priorityLabel.BackColor = Color.Orange;
+                else if (item.Priority == "High")
+                    priorityLabel.BackColor = Color.Red;
+
+                dataTableLayoutPanel.Controls.Add(titleLabel, 0, row);
+                dataTableLayoutPanel.Controls.Add(descLabel, 1, row);
+                dataTableLayoutPanel.Controls.Add(dateLabel, 2, row);
+                dataTableLayoutPanel.Controls.Add(priorityLabel, 3, row);
+
+                row++;
+            }
+        }
+
     }
 }
