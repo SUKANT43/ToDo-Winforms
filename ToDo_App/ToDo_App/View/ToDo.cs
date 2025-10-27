@@ -12,7 +12,7 @@ namespace ToDo_App.View
 {
     public partial class ToDo : Form
     {
-        private Panel inputPanel,titlePanel,descriptionPanel,datePanel,priorityPanel,submitPanel;
+        private Panel mainPanel,inputPanel,titlePanel,descriptionPanel,datePanel,priorityPanel,submitPanel;
         private Label titleLabel,descriptionLabel,dateLabel,priorityLabel;
         private TextBox titleTextBox;
         private RichTextBox DescriptionRichTextBox;
@@ -21,17 +21,26 @@ namespace ToDo_App.View
         private Button submitButton;
         public ToDo()
         {
-            Elements();
             MinimumSize = new Size(500, 400);
             StartPosition = FormStartPosition.CenterScreen;
 
+            Load += (s, e) =>
+            {
+                Elements();
+                ResizeElements();
+            };
+            Resize += (s, e) =>
+            {
+                ResizeElements();
+            };   
         }
 
         private void Elements()
          {
             inputPanel = new Panel();
+            inputPanel.Dock = DockStyle.Top;
             inputPanel.Size = new Size(350, 350);
-            inputPanel.Location = new Point((ClientSize.Width - inputPanel.Width) / 2, 0);
+            inputPanel.Location = new Point(((ClientSize.Width - inputPanel.Width) / 2), 50);
             inputPanel.Anchor = AnchorStyles.None;
             inputPanel.BorderStyle = BorderStyle.FixedSingle;
             
@@ -48,7 +57,7 @@ namespace ToDo_App.View
              titlePanel.Controls.Add(titleLabel);
 
              titleTextBox = new TextBox();
-             titleTextBox.Size = new Size(200, 25);
+             titleTextBox.Size = new Size(200, 105);
              titleTextBox.Location = new Point(90, 12);
              titleTextBox.BackColor = Color.White;
              titlePanel.Controls.Add(titleTextBox);
@@ -110,7 +119,7 @@ namespace ToDo_App.View
 
             //Submit Button
             submitPanel = new Panel();
-            submitPanel.Size = new Size(400, 50);
+            submitPanel.Size = new Size(300, 50);
             submitPanel.Location = new Point(25, priorityPanel.Bottom + 20);
 
             submitButton = new Button();
@@ -129,11 +138,17 @@ namespace ToDo_App.View
             inputPanel.Controls.Add(datePanel);
             inputPanel.Controls.Add(priorityPanel);
             inputPanel.Controls.Add(submitPanel);
-
-            Controls.Add(inputPanel);
+            mainPanel = new Panel();
+            mainPanel.Location = new Point();
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(inputPanel);
+            Controls.Add(mainPanel);
 
          }
         
-
+        private void ResizeElements()
+        {
+            inputPanel.Location = new Point(((ClientSize.Width - inputPanel.Width) / 2), 50);
+        }
     }
 }
