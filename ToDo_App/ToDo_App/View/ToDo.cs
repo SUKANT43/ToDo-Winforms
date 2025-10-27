@@ -12,17 +12,21 @@ namespace ToDo_App.View
 {
     public partial class ToDo : Form
     {
-        private Panel mainPanel,inputPanel,titlePanel,descriptionPanel,datePanel,priorityPanel,submitPanel;
+        private Panel mainPanel,inputPanel,titlePanel,descriptionPanel,datePanel,priorityPanel,submitPanel, gridPanel;
         private Label titleLabel,descriptionLabel,dateLabel,priorityLabel;
         private TextBox titleTextBox;
         private RichTextBox DescriptionRichTextBox;
         private DateTimePicker dateTimePicker;
         private ComboBox priorityComboBox;
         private Button submitButton;
+        private List<Controller.ToDoController> list;
+        private DataGridView dataGridView;
         public ToDo()
         {
-            MinimumSize = new Size(500, 400);
+            MinimumSize = new Size(500, 600);
             StartPosition = FormStartPosition.CenterScreen;
+            list = new List<Controller.ToDoController>();
+            submitButton = new Button();
 
             Load += (s, e) =>
             {
@@ -32,11 +36,18 @@ namespace ToDo_App.View
             Resize += (s, e) =>
             {
                 ResizeElements();
-            };   
+            };
+
+            submitButton.Click += (s, e) =>
+            {
+                Click_SubmitButton();
+            };
         }
 
         private void Elements()
          {
+            mainPanel = new Panel();
+
             inputPanel = new Panel();
             inputPanel.Dock = DockStyle.Top;
             inputPanel.Size = new Size(350, 350);
@@ -112,6 +123,7 @@ namespace ToDo_App.View
 
             priorityComboBox = new ComboBox();
             priorityComboBox.Location = new Point(90,12);
+            priorityComboBox.Text = "Select Priority";
             priorityComboBox.Items.Add("Low");
             priorityComboBox.Items.Add("Moderate");
             priorityComboBox.Items.Add("High");
@@ -122,7 +134,6 @@ namespace ToDo_App.View
             submitPanel.Size = new Size(300, 50);
             submitPanel.Location = new Point(25, priorityPanel.Bottom + 20);
 
-            submitButton = new Button();
             submitButton.Text = "Add";
             submitButton.Size = new Size(100, 35);
             submitButton.BackColor = Color.DodgerBlue;
@@ -132,16 +143,24 @@ namespace ToDo_App.View
             submitButton.Location = new Point((submitPanel.Width - submitButton.Width) / 2, 8);
             submitPanel.Controls.Add(submitButton);
 
+            //grid
+            gridPanel = new Panel();
+            gridPanel.Location = new Point((ClientSize.Width - gridPanel.Width) / 2, mainPanel.Bottom + 30);
+
+            dataGridView = new DataGridView();
+            dataGridView.Dock = DockStyle.Fill;
+            gridPanel.Controls.Add(dataGridView);
+
             // Add to input panel and form
             inputPanel.Controls.Add(titlePanel);
             inputPanel.Controls.Add(descriptionPanel);
             inputPanel.Controls.Add(datePanel);
             inputPanel.Controls.Add(priorityPanel);
             inputPanel.Controls.Add(submitPanel);
-            mainPanel = new Panel();
             mainPanel.Location = new Point();
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(inputPanel);
+            mainPanel.Controls.Add(gridPanel);
             Controls.Add(mainPanel);
 
          }
@@ -149,6 +168,21 @@ namespace ToDo_App.View
         private void ResizeElements()
         {
             inputPanel.Location = new Point(((ClientSize.Width - inputPanel.Width) / 2), 50);
+        }
+
+        private void Click_SubmitButton()
+        {
+            if (string.IsNullOrWhiteSpace(titleTextBox.Text) || string.IsNullOrWhiteSpace(DescriptionRichTextBox.Text))
+            {
+                MessageBox.Show("Please fill in all the fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            list.Add(new Controller.ToDoController(
+                titleTextBox.Text,
+                DescriptionRichTextBox.Text,
+                dateTimePicker.Value,
+                priorityComboBox.SelectedItem.ToString()
+                ));
         }
     }
 }
