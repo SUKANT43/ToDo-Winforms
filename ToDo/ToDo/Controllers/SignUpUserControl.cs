@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using MySql.Data.MySqlClient;
-using System.Configuration;
 
 
 namespace ToDo.Controllers
@@ -42,7 +34,7 @@ namespace ToDo.Controllers
         private void signUpButton_Click(object sender, EventArgs e)
         {
             string name = nameTextBox.Text.Trim();
-            string email = emailTextBox.Text.Trim();
+            string email = emailTextBox.Text.Trim().ToLower();
             string password = passwordTextBox.Text.Trim();
             string confirmPassword = confirmPasswordTextBox.Text.Trim();
 
@@ -64,8 +56,6 @@ namespace ToDo.Controllers
                 MessageBox.Show("Choose Profile Picture.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-
 
             try
             {
@@ -114,6 +104,12 @@ namespace ToDo.Controllers
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void alreadyHaveAnAccountLabel_Click(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Show();
         }
     }
 }

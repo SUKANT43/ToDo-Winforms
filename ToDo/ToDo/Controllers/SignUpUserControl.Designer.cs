@@ -160,6 +160,7 @@ namespace ToDo.Controllers
             this.alreadyHaveAnAccountLabel.TabIndex = 12;
             this.alreadyHaveAnAccountLabel.Text = "Login";
             this.alreadyHaveAnAccountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.alreadyHaveAnAccountLabel.Click += new System.EventHandler(this.alreadyHaveAnAccountLabel_Click);
             // 
             // SignUpUserControl
             // 
