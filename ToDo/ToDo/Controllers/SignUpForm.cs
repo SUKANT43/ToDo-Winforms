@@ -16,9 +16,11 @@ namespace ToDo.Controllers
         {
             FormBorderStyle = FormBorderStyle.None;
             StartPosition = FormStartPosition.CenterScreen;
+            BackColor = Color.FromArgb(245, 245, 245);
+           Font = new Font("Segoe UI", 10, FontStyle.Bold);
             SignUpUserControl sf = new SignUpUserControl();
-            MaximumSize = new Size(sf.Width, sf.Height+20);
-            MinimumSize = new Size(sf.Width, sf.Height+20);
+            MaximumSize = new Size(sf.Width, sf.Height+10);
+            MinimumSize = new Size(sf.Width, sf.Height+10);
             CloseButtonUserControl cbc = new CloseButtonUserControl();
             cbc.Location = new Point(sf.Width - 40, 0);
             Controls.Add(cbc);
