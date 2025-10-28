@@ -178,7 +178,6 @@ namespace ToDo_App.View
         {
             inputPanel.Location = new Point(((ClientSize.Width - inputPanel.Width) / 2), 50);
             dataPanel.Location = new Point((ClientSize.Width - dataPanel.Width) / 2, inputPanel.Bottom + 30);
-
         }
 
         private void Click_SubmitButton()
@@ -195,7 +194,7 @@ namespace ToDo_App.View
                 priorityComboBox.SelectedItem.ToString()
                 ));
             titleTextBox.Text = "";
-            DescriptionRichTextBox.Text = "";
+            DescriptionRichTextBox.Text="";
 
             DiplayData();
         }
@@ -233,7 +232,7 @@ namespace ToDo_App.View
                     Padding = new Padding(5)
                 };
 
-                var descLabel = new Label
+                var descriptionLabel = new Label
                 {
                     Text = item.Description,
                     AutoSize = true,
@@ -264,7 +263,7 @@ namespace ToDo_App.View
                     priorityLabel.BackColor = Color.Red;
 
                 dataTableLayoutPanel.Controls.Add(titleLabel, 0, row);
-                dataTableLayoutPanel.Controls.Add(descLabel, 1, row);
+                dataTableLayoutPanel.Controls.Add(descriptionLabel, 1, row);
                 dataTableLayoutPanel.Controls.Add(dateLabel, 2, row);
                 dataTableLayoutPanel.Controls.Add(priorityLabel, 3, row);
 
