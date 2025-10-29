@@ -28,6 +28,7 @@ namespace ToDo.View
                 {
                     imagePath = openFileDialog.FileName;
                     userPictureBox.Image = Image.FromFile(imagePath);
+                    userPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
         }
