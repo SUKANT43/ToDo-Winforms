@@ -1,4 +1,4 @@
-﻿namespace ToDo.Controllers
+﻿namespace ToDo.View
 {
     partial class CloseButtonUserControl
     {

@@ -1,6 +1,6 @@
-﻿namespace ToDo.Controllers
+﻿namespace ToDo.View
 {
-    partial class LoginForm
+    partial class SignUpForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "LoginForrm";
+            this.Text = "SignUpForm";
         }
 
         #endregion

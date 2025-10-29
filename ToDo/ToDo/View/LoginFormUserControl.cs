@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-namespace ToDo.Controllers
+namespace ToDo.View
 {
     public partial class LoginFormUserControl : UserControl
     {
@@ -17,6 +17,7 @@ namespace ToDo.Controllers
         {
             SignUpForm suf = new SignUpForm();
             suf.Show();
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)

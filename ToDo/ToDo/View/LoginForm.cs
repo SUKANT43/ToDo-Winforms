@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToDo.Controllers
+namespace ToDo.View
 {
     public partial class LoginForm : Form
     {
@@ -24,5 +24,6 @@ namespace ToDo.Controllers
             MinimumSize = new Size(luc.Width, luc.Height);
             Controls.Add(luc);
         }
+
     }
 }

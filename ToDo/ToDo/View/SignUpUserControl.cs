@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 
-namespace ToDo.Controllers
+namespace ToDo.View
 {
     public partial class SignUpUserControl : UserControl
     {
@@ -103,13 +103,14 @@ namespace ToDo.Controllers
             {
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void alreadyHaveAnAccountLabel_Click(object sender, EventArgs e)
         {
+
             LoginForm lf = new LoginForm();
             lf.Show();
+
         }
     }
 }

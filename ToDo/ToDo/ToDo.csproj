@@ -126,45 +126,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CloseButtonUserControl.cs">
+    <Compile Include="View\CloseButtonUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controllers\CloseButtonUserControl.Designer.cs">
+    <Compile Include="View\CloseButtonUserControl.Designer.cs">
       <DependentUpon>CloseButtonUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\LoginForm.cs">
+    <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controllers\LoginForm.Designer.cs">
+    <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\LoginFormUserControl.cs">
+    <Compile Include="View\LoginFormUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controllers\LoginFormUserControl.Designer.cs">
+    <Compile Include="View\LoginFormUserControl.Designer.cs">
       <DependentUpon>LoginFormUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\SignUpForm.cs">
+    <Compile Include="View\SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controllers\SignUpForm.Designer.cs">
+    <Compile Include="View\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\SignUpUserControl.cs">
+    <Compile Include="View\SignUpUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controllers\SignUpUserControl.Designer.cs">
+    <Compile Include="View\SignUpUserControl.Designer.cs">
       <DependentUpon>SignUpUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controllers\CloseButtonUserControl.resx">
+    <EmbeddedResource Include="View\CloseButtonUserControl.resx">
       <DependentUpon>CloseButtonUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\LoginFormUserControl.resx">
+    <EmbeddedResource Include="View\LoginFormUserControl.resx">
       <DependentUpon>LoginFormUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\SignUpUserControl.resx">
+    <EmbeddedResource Include="View\SignUpUserControl.resx">
       <DependentUpon>SignUpUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

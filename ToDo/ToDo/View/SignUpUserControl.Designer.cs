@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace ToDo.Controllers
+namespace ToDo.View
 {
     partial class SignUpUserControl
     {

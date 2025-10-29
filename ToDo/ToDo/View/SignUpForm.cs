@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToDo.Controllers
+namespace ToDo.View
 {
     public partial class SignUpForm : Form
     {
@@ -25,6 +25,9 @@ namespace ToDo.Controllers
             cbc.Location = new Point(sf.Width - 40, 0);
             Controls.Add(cbc);
             Controls.Add(sf);
+        }
+        public void closeForm()
+        {
         }
     }
 }

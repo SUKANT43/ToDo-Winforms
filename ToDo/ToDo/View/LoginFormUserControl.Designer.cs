@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
-namespace ToDo.Controllers
+namespace ToDo.View
 {
     partial class LoginFormUserControl
     {
@@ -79,8 +79,8 @@ namespace ToDo.Controllers
             this.passwordTextBox.Location = new System.Drawing.Point(111, 90);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(160, 25);
-            this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.TabIndex = 0;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // loginButton
             // 
