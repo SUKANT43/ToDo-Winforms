@@ -5,6 +5,7 @@ namespace ToDo.View
 {
     public partial class LoginFormUserControl : UserControl
     {
+        public event EventHandler OnNavigateToSignUp;
         private readonly string connectionString = System.Configuration.ConfigurationManager
     .ConnectionStrings["ToDoDB"].ConnectionString;
 
@@ -15,9 +16,7 @@ namespace ToDo.View
 
         private void signUpLabel_Click(object sender, EventArgs e)
         {
-            SignUpForm suf = new SignUpForm();
-            suf.Show();
-
+            OnNavigateToSignUp?.Invoke(this,EventArgs.Empty);
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -47,6 +46,7 @@ namespace ToDo.View
                                 string name = reader["name"].ToString();
                                 if (dbPassword == password)
                                 {
+                                    Controller.AuthController.SetMail(email);
                                     MessageBox.Show($"Hi {name}!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else

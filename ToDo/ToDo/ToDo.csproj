@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AuthController.cs" />
     <Compile Include="View\CloseButtonUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

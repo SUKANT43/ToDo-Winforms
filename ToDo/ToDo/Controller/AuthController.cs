@@ -8,5 +8,15 @@ namespace ToDo.Controller
 {
     class AuthController
     {
+        private static string email;
+        public static void SetMail(string mailId)
+        {
+            email = mailId;
+        }
+
+        private static string GetMail()
+        {
+            return email;
+        }
     }
 }

@@ -18,12 +18,18 @@ namespace ToDo.View
             StartPosition = FormStartPosition.CenterScreen;
             LoginFormUserControl luc = new LoginFormUserControl();
             CloseButtonUserControl cbuc = new CloseButtonUserControl();
-            cbuc.Location = new Point(luc.Width-35,0);
+            luc.OnNavigateToSignUp += Sf_OnNavigateToSignUp;
+            cbuc.Location = new Point(luc.Width - 35, 0);
             Controls.Add(cbuc);
             MaximumSize = new Size(luc.Width, luc.Height);
             MinimumSize = new Size(luc.Width, luc.Height);
             Controls.Add(luc);
         }
 
+        public void Sf_OnNavigateToSignUp(Object s,EventArgs e)
+        {
+            SignUpForm sf = new SignUpForm();
+            sf.Show();
+        }
     }
 }

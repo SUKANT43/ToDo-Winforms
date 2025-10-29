@@ -12,6 +12,7 @@ namespace ToDo.View
 {
     public partial class SignUpForm : Form
     {
+        
         public SignUpForm()
         {
             FormBorderStyle = FormBorderStyle.None;
@@ -21,13 +22,19 @@ namespace ToDo.View
             SignUpUserControl sf = new SignUpUserControl();
             MaximumSize = new Size(sf.Width, sf.Height+10);
             MinimumSize = new Size(sf.Width, sf.Height+10);
+            sf.OnNavigateToLogin += Sf_OnNavigateToLogin;
             CloseButtonUserControl cbc = new CloseButtonUserControl();
             cbc.Location = new Point(sf.Width - 40, 0);
             Controls.Add(cbc);
             Controls.Add(sf);
         }
-        public void closeForm()
+        private void Sf_OnNavigateToLogin(object sender, EventArgs e)
         {
+            LoginForm lf = new LoginForm();
+            lf.Show();
+            Close(); 
         }
     }
+
 }
+

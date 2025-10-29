@@ -8,6 +8,7 @@ namespace ToDo.View
 {
     public partial class SignUpUserControl : UserControl
     {
+        public event EventHandler OnNavigateToLogin;
         private string imagePath;
         private readonly string connectionString = System.Configuration.ConfigurationManager
             .ConnectionStrings["ToDoDB"].ConnectionString;
@@ -107,10 +108,7 @@ namespace ToDo.View
 
         private void alreadyHaveAnAccountLabel_Click(object sender, EventArgs e)
         {
-
-            LoginForm lf = new LoginForm();
-            lf.Show();
-
+            OnNavigateToLogin?.Invoke(this, EventArgs.Empty);
         }
     }
 }
