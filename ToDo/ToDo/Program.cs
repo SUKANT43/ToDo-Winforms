@@ -16,7 +16,7 @@ namespace ToDo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.MainPageForm());
+            Application.Run(new View.LoginForm());
         }
     }
 }

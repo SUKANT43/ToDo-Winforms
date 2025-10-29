@@ -48,7 +48,7 @@ namespace ToDo.View
             // 
             this.titleLabel.Location = new System.Drawing.Point(299, 26);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(135, 27);
+            this.titleLabel.Size = new System.Drawing.Size(177, 31);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Task Manager";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,7 +57,7 @@ namespace ToDo.View
             // 
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.Controls.Add(this.mainPanel);
-            this.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Name = "TopBarUserControl";
             this.Size = new System.Drawing.Size(1500, 90);
             this.mainPanel.ResumeLayout(false);

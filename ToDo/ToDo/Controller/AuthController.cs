@@ -14,7 +14,7 @@ namespace ToDo.Controller
             email = mailId;
         }
 
-        private static string GetMail()
+        public static string GetMail()
         {
             return email;
         }
