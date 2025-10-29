@@ -36,11 +36,12 @@ namespace ToDo.View
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
+            this.LoginTitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // emailLabel
             // 
-            this.emailLabel.Location = new System.Drawing.Point(23, 50);
+            this.emailLabel.Location = new System.Drawing.Point(31, 80);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(52, 23);
             this.emailLabel.TabIndex = 0;
@@ -49,7 +50,7 @@ namespace ToDo.View
             // 
             // passwordLabel
             // 
-            this.passwordLabel.Location = new System.Drawing.Point(23, 90);
+            this.passwordLabel.Location = new System.Drawing.Point(31, 120);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(83, 23);
             this.passwordLabel.TabIndex = 1;
@@ -59,7 +60,7 @@ namespace ToDo.View
             // signUpLabel
             // 
             this.signUpLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signUpLabel.Location = new System.Drawing.Point(121, 178);
+            this.signUpLabel.Location = new System.Drawing.Point(129, 208);
             this.signUpLabel.Name = "signUpLabel";
             this.signUpLabel.Size = new System.Drawing.Size(100, 23);
             this.signUpLabel.TabIndex = 2;
@@ -69,14 +70,14 @@ namespace ToDo.View
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(111, 48);
+            this.emailTextBox.Location = new System.Drawing.Point(119, 78);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(160, 25);
             this.emailTextBox.TabIndex = 0;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(111, 90);
+            this.passwordTextBox.Location = new System.Drawing.Point(119, 120);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(160, 25);
             this.passwordTextBox.TabIndex = 0;
@@ -89,7 +90,7 @@ namespace ToDo.View
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(134, 134);
+            this.loginButton.Location = new System.Drawing.Point(142, 164);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 32);
             this.loginButton.TabIndex = 3;
@@ -97,8 +98,19 @@ namespace ToDo.View
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
+            // LoginTitleLabel
+            // 
+            this.LoginTitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.LoginTitleLabel.Location = new System.Drawing.Point(138, 22);
+            this.LoginTitleLabel.Name = "LoginTitleLabel";
+            this.LoginTitleLabel.Size = new System.Drawing.Size(79, 23);
+            this.LoginTitleLabel.TabIndex = 0;
+            this.LoginTitleLabel.Text = "Login";
+            this.LoginTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LoginFormUserControl
             // 
+            this.Controls.Add(this.LoginTitleLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.signUpLabel);
@@ -107,14 +119,14 @@ namespace ToDo.View
             this.Controls.Add(this.passwordTextBox);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Name = "LoginFormUserControl";
-            this.Size = new System.Drawing.Size(311, 221);
+            this.Size = new System.Drawing.Size(311, 254);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Label emailLabel, passwordLabel, signUpLabel;
+        private Label emailLabel, passwordLabel, signUpLabel, LoginTitleLabel;
         private TextBox emailTextBox, passwordTextBox;
         private Button loginButton;
     }

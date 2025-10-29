@@ -51,12 +51,13 @@ namespace ToDo.View
             this.signUpButton = new System.Windows.Forms.Button();
             this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.alreadyHaveAnAccountLabel = new System.Windows.Forms.Label();
+            this.signupLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
-            this.nameLabel.Location = new System.Drawing.Point(72, 52);
+            this.nameLabel.Location = new System.Drawing.Point(69, 71);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(64, 25);
             this.nameLabel.TabIndex = 0;
@@ -64,7 +65,7 @@ namespace ToDo.View
             // 
             // emailLabel
             // 
-            this.emailLabel.Location = new System.Drawing.Point(72, 82);
+            this.emailLabel.Location = new System.Drawing.Point(69, 101);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(64, 25);
             this.emailLabel.TabIndex = 1;
@@ -72,7 +73,7 @@ namespace ToDo.View
             // 
             // passwordLabel
             // 
-            this.passwordLabel.Location = new System.Drawing.Point(72, 110);
+            this.passwordLabel.Location = new System.Drawing.Point(69, 129);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(81, 19);
             this.passwordLabel.TabIndex = 2;
@@ -80,7 +81,7 @@ namespace ToDo.View
             // 
             // confirmPasswordLabel
             // 
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(12, 135);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(9, 154);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
             this.confirmPasswordLabel.Size = new System.Drawing.Size(141, 25);
             this.confirmPasswordLabel.TabIndex = 3;
@@ -88,7 +89,7 @@ namespace ToDo.View
             // 
             // photoLabel
             // 
-            this.photoLabel.Location = new System.Drawing.Point(342, 154);
+            this.photoLabel.Location = new System.Drawing.Point(339, 173);
             this.photoLabel.Name = "photoLabel";
             this.photoLabel.Size = new System.Drawing.Size(105, 18);
             this.photoLabel.TabIndex = 4;
@@ -97,21 +98,21 @@ namespace ToDo.View
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(159, 49);
+            this.nameTextBox.Location = new System.Drawing.Point(156, 68);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(150, 25);
             this.nameTextBox.TabIndex = 5;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(159, 79);
+            this.emailTextBox.Location = new System.Drawing.Point(156, 98);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(150, 25);
             this.emailTextBox.TabIndex = 6;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(159, 107);
+            this.passwordTextBox.Location = new System.Drawing.Point(156, 126);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(150, 25);
             this.passwordTextBox.TabIndex = 7;
@@ -119,7 +120,7 @@ namespace ToDo.View
             // 
             // confirmPasswordTextBox
             // 
-            this.confirmPasswordTextBox.Location = new System.Drawing.Point(159, 135);
+            this.confirmPasswordTextBox.Location = new System.Drawing.Point(156, 154);
             this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
             this.confirmPasswordTextBox.Size = new System.Drawing.Size(150, 25);
             this.confirmPasswordTextBox.TabIndex = 8;
@@ -132,7 +133,7 @@ namespace ToDo.View
             this.signUpButton.FlatAppearance.BorderSize = 0;
             this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpButton.ForeColor = System.Drawing.Color.White;
-            this.signUpButton.Location = new System.Drawing.Point(193, 182);
+            this.signUpButton.Location = new System.Drawing.Point(190, 201);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.Size = new System.Drawing.Size(75, 30);
             this.signUpButton.TabIndex = 9;
@@ -144,7 +145,7 @@ namespace ToDo.View
             // 
             this.userPictureBox.BackColor = System.Drawing.Color.Black;
             this.userPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userPictureBox.Location = new System.Drawing.Point(342, 40);
+            this.userPictureBox.Location = new System.Drawing.Point(339, 59);
             this.userPictureBox.Name = "userPictureBox";
             this.userPictureBox.Size = new System.Drawing.Size(105, 111);
             this.userPictureBox.TabIndex = 11;
@@ -154,7 +155,7 @@ namespace ToDo.View
             // alreadyHaveAnAccountLabel
             // 
             this.alreadyHaveAnAccountLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.alreadyHaveAnAccountLabel.Location = new System.Drawing.Point(201, 215);
+            this.alreadyHaveAnAccountLabel.Location = new System.Drawing.Point(198, 234);
             this.alreadyHaveAnAccountLabel.Name = "alreadyHaveAnAccountLabel";
             this.alreadyHaveAnAccountLabel.Size = new System.Drawing.Size(67, 23);
             this.alreadyHaveAnAccountLabel.TabIndex = 12;
@@ -162,9 +163,20 @@ namespace ToDo.View
             this.alreadyHaveAnAccountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.alreadyHaveAnAccountLabel.Click += new System.EventHandler(this.alreadyHaveAnAccountLabel_Click);
             // 
+            // signupLabel
+            // 
+            this.signupLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.signupLabel.Location = new System.Drawing.Point(186, 15);
+            this.signupLabel.Name = "signupLabel";
+            this.signupLabel.Size = new System.Drawing.Size(100, 23);
+            this.signupLabel.TabIndex = 1;
+            this.signupLabel.Text = "Sign Up";
+            this.signupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SignUpUserControl
             // 
             this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.signupLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.confirmPasswordLabel);
@@ -178,7 +190,7 @@ namespace ToDo.View
             this.Controls.Add(this.alreadyHaveAnAccountLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Name = "SignUpUserControl";
-            this.Size = new System.Drawing.Size(476, 263);
+            this.Size = new System.Drawing.Size(476, 280);
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,7 +198,7 @@ namespace ToDo.View
         }
 
         #endregion
-        private System.Windows.Forms.Label nameLabel, emailLabel, passwordLabel, confirmPasswordLabel, photoLabel, alreadyHaveAnAccountLabel;
+        private System.Windows.Forms.Label signupLabel,nameLabel, emailLabel, passwordLabel, confirmPasswordLabel, photoLabel, alreadyHaveAnAccountLabel;
         private System.Windows.Forms.TextBox nameTextBox, emailTextBox, passwordTextBox, confirmPasswordTextBox;
         private System.Windows.Forms.Button  signUpButton;
         private PictureBox userPictureBox;

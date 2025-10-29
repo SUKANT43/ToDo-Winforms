@@ -15,6 +15,7 @@ namespace ToDo.View
         private readonly string connectionString = System.Configuration.ConfigurationManager
         .ConnectionStrings["ToDoDB"].ConnectionString;
 
+
         public NavBarUserControl()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace ToDo.View
                             {
                                 string name = reader["Name"].ToString();
                                 string photoPath = reader["ProfileImagePath"].ToString();
-                                nameLabel.Text = name;
+                                nameLabel.Text = $"Hi, {name}.";
                                 profilePictureBox.Image = Image.FromFile(photoPath);
                                 taskPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                             }

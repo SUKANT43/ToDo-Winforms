@@ -19,6 +19,7 @@ namespace ToDo.View
             LoginFormUserControl luc = new LoginFormUserControl();
             CloseButtonUserControl cbuc = new CloseButtonUserControl();
             luc.OnNavigateToSignUp += Sf_OnNavigateToSignUp;
+            luc.OnNavigateToMainPage += Sf_OnNavigateToMainPage;
             cbuc.Location = new Point(luc.Width - 35, 0);
             Controls.Add(cbuc);
             MaximumSize = new Size(luc.Width, luc.Height);
@@ -30,6 +31,12 @@ namespace ToDo.View
         {
             SignUpForm sf = new SignUpForm();
             sf.Show();
+        }
+
+        public void Sf_OnNavigateToMainPage(object s, EventArgs e)
+        {
+            MainPageForm mpf = new MainPageForm();
+            mpf.Show();
         }
     }
 }

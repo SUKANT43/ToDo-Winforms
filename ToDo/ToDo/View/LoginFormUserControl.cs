@@ -6,6 +6,8 @@ namespace ToDo.View
     public partial class LoginFormUserControl : UserControl
     {
         public event EventHandler OnNavigateToSignUp;
+        public event EventHandler OnNavigateToMainPage;
+
         private readonly string connectionString = System.Configuration.ConfigurationManager
         .ConnectionStrings["ToDoDB"].ConnectionString;
 
@@ -18,6 +20,7 @@ namespace ToDo.View
         {
             OnNavigateToSignUp?.Invoke(this,EventArgs.Empty);
         }
+
 
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -46,10 +49,10 @@ namespace ToDo.View
                                 string name = reader["name"].ToString();
                                 if (dbPassword == password)
                                 {
+
                                     Controller.AuthController.SetMail(email);
-                                    MainPageForm mpf = new MainPageForm();
-                                    mpf.Show();
-                                    signUpLabel_Click();
+                                    MessageBox.Show("Login Successfully!", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    OnNavigateToMainPage?.Invoke(this, EventArgs.Empty);
                                 }
                                 else
                                 {
@@ -63,7 +66,6 @@ namespace ToDo.View
                             }
                         }
                     }
-
                 }
             }
             catch (Exception ex)
