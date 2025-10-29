@@ -27,6 +27,7 @@ namespace ToDo.View
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     imagePath = openFileDialog.FileName;
+                    userPictureBox.BackColor = Color.FromArgb(0, 0, 0);
                     userPictureBox.Image = Image.FromFile(imagePath);
                     userPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
