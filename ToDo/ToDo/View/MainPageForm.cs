@@ -23,6 +23,7 @@ namespace ToDo.View
             tbuc.Dock = DockStyle.Top;
             this.Controls.Add(tbuc);
             this.Controls.Add(nbuc);
+
         }
     }
 }

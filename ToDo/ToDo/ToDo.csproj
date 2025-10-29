@@ -157,6 +157,12 @@
     <Compile Include="View\NavBarUserControl.Designer.cs">
       <DependentUpon>NavBarUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SettingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SettingUserControl.Designer.cs">
+      <DependentUpon>SettingUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Drawing.Drawing2D;
+
 namespace ToDo.View
 {
     public partial class NavBarUserControl : UserControl
@@ -26,11 +28,13 @@ namespace ToDo.View
         public void PageResize(object s,EventArgs e)
         {
             profilePanel.Location = new Point((Width - profilePanel.Width) / 2,20);
-            homePanel.Location = new Point((Width - profilePanel.Width) / 2,205);
+            homePanel.Location = new Point((Width - profilePanel.Width) / 2,210);
             taskPanel.Location = new Point((Width - profilePanel.Width) / 2, 285);
             settingPannel.Location = new Point((Width - profilePanel.Width) / 2, 365);
             ShowProfile();
+            MakeRounded(profilePictureBox);
         }
+
 
         public void ShowProfile()
         {
@@ -54,9 +58,9 @@ namespace ToDo.View
                             {
                                 string name = reader["Name"].ToString();
                                 string photoPath = reader["ProfileImagePath"].ToString();
-                                nameLabel.Text = $"Hi, {name}.";
+                                nameLabel.Text = $"Hi, {name}";
                                 profilePictureBox.Image = Image.FromFile(photoPath);
-                                taskPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                                profilePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                             }
                         }
                     }
@@ -67,5 +71,13 @@ namespace ToDo.View
                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void MakeRounded(PictureBox pb)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(0, 0, pb.Width - 1, pb.Height - 1);
+            pb.Region = new Region(gp);
+        }
+
     }
 }

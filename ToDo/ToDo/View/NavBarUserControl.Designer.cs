@@ -72,6 +72,7 @@ namespace ToDo.View
             // 
             this.taskPanel.Controls.Add(this.taskLabel);
             this.taskPanel.Controls.Add(this.taskPictureBox);
+            this.taskPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.taskPanel.Location = new System.Drawing.Point(41, 327);
             this.taskPanel.Name = "taskPanel";
             this.taskPanel.Size = new System.Drawing.Size(145, 65);
@@ -96,7 +97,6 @@ namespace ToDo.View
             this.taskPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.taskPictureBox.TabIndex = 1;
             this.taskPictureBox.TabStop = false;
-            this.taskPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             // 
             // profilePanel
             // 
@@ -110,7 +110,7 @@ namespace ToDo.View
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(40, 146);
+            this.nameLabel.Location = new System.Drawing.Point(23, 147);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(49, 19);
             this.nameLabel.TabIndex = 0;
@@ -130,13 +130,11 @@ namespace ToDo.View
             // 
             this.homePanel.Controls.Add(this.homeLabel);
             this.homePanel.Controls.Add(this.homePictureBox);
+            this.homePanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homePanel.Location = new System.Drawing.Point(41, 251);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(145, 58);
             this.homePanel.TabIndex = 1;
-            settingPannel.Cursor = Cursors.Hand;
-            taskPanel.Cursor = Cursors.Hand;
-            homePanel.Cursor = Cursors.Hand;
             // 
             // homeLabel
             // 
@@ -162,6 +160,7 @@ namespace ToDo.View
             // 
             this.settingPannel.Controls.Add(this.settingPictureBox);
             this.settingPannel.Controls.Add(this.settingLabel);
+            this.settingPannel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingPannel.Location = new System.Drawing.Point(41, 400);
             this.settingPannel.Name = "settingPannel";
             this.settingPannel.Size = new System.Drawing.Size(164, 62);

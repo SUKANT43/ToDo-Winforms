@@ -31,12 +31,14 @@ namespace ToDo.View
         {
             SignUpForm sf = new SignUpForm();
             sf.Show();
+            Hide();
         }
 
         public void Sf_OnNavigateToMainPage(object s, EventArgs e)
         {
             MainPageForm mpf = new MainPageForm();
             mpf.Show();
+            Hide();
         }
     }
 }
