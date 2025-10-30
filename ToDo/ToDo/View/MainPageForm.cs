@@ -12,9 +12,15 @@ namespace ToDo.View
 {
     public partial class MainPageForm : Form
     {
+        NavBarUserControl nbuc = new NavBarUserControl();
+        TopBarUserControl tbuc = new TopBarUserControl();
+        SettingUserControl suc = new SettingUserControl();
+
         public MainPageForm()
         {
             InitializeComponent();
+            MinimumSize = new Size(1325, 1150);
+
             //FormBorderStyle = FormBorderStyle.None;
             FormClosing += (s, e) =>
             {
@@ -30,14 +36,26 @@ namespace ToDo.View
                 }
                 Application.Exit();
             };
-            MinimumSize = new Size(1325, 1150);
-            NavBarUserControl nbuc = new NavBarUserControl();
-            nbuc.Dock = DockStyle.Left;
-            TopBarUserControl tbuc = new TopBarUserControl();
+
+            Resize += (s, e) => PageResize(s, e);
+            Load += (s, e) => PageResize(s, e);
+
             tbuc.Dock = DockStyle.Top;
-            this.Controls.Add(tbuc);
-            this.Controls.Add(nbuc);
+            nbuc.Dock = DockStyle.Left;
+            suc.Dock = DockStyle.Fill;
+
+            Controls.Add(suc);
+            Controls.Add(tbuc);
+            Controls.Add(nbuc);
+
 
         }
+
+        public void PageResize(object e, EventArgs s)
+        {
+
+
+        }
+
     }
 }

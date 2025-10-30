@@ -192,6 +192,9 @@
     <EmbeddedResource Include="View\NavBarUserControl.resx">
       <DependentUpon>NavBarUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingUserControl.resx">
+      <DependentUpon>SettingUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SignUpUserControl.resx">
       <DependentUpon>SignUpUserControl.cs</DependentUpon>
     </EmbeddedResource>
